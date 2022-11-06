@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //Napisz test sprawdzający przejście ze strony logowania do strony głównej.
 public class TaskFive {
     @Test
-    void checkLoggingToMainPage() throws InterruptedException {
+    void checkLoggingToMainPage(){
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
@@ -18,7 +18,6 @@ public class TaskFive {
         passwordInput.sendKeys("secret_sauce");
         emailInput.sendKeys("standard_user");
         submitButton.click();
-        Thread.sleep(2000);
         WebElement shoppingCart = driver.findElement(By.className("shopping_cart_link"));
         Assertions.assertTrue(shoppingCart.isDisplayed(), "This is not a main page");
         driver.quit();

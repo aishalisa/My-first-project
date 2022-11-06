@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 ////się.
 public class TaskSeven {
     @Test
-    void addAndRemoveProduct() throws InterruptedException {
+    void addAndRemoveProduct(){
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
@@ -21,7 +21,6 @@ public class TaskSeven {
         submitButton.submit();
         WebElement addButton = driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/button"));
         addButton.click();
-        Thread.sleep(3000);
         WebElement removeButton = driver.findElement(By.id("remove-sauce-labs-backpack"));
         removeButton.click();
         WebElement shoppingCart = driver.findElement(By.className("shopping_cart_link"));

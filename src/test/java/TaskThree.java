@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TaskThree {
     @Test
-    void checkLogoAndSearchField() throws InterruptedException {
+    void checkLogoAndSearchField(){
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");

@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //Napisz test, który zweryfikuje działanie aplikacji, gdy przy próbie logowania nie podano hasła.
 public class TaskOneAndTwo {
     @Test
-    void submitWithUserNameFieldEmpty() throws InterruptedException {
+    void submitWithUserNameFieldEmpty(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
         WebElement passwordInput = driver.findElement(By.id("password"));
@@ -16,13 +16,11 @@ public class TaskOneAndTwo {
         passwordInput.sendKeys("secret_sauce");
         submitButton.click();
         WebElement errorBox = driver.findElement(By.cssSelector(".error-message-container"));
-        Thread.sleep(3000);
         Assertions.assertEquals("Epic sadface: Username is required", errorBox.getText(),"Username is required");
         driver.quit();
     }
-
     @Test
-    void submitWithPasswordFieldEmpty() throws InterruptedException {
+    void submitWithPasswordFieldEmpty(){
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
         WebElement userNameInput = driver.findElement(By.id("user-name"));
@@ -30,7 +28,6 @@ public class TaskOneAndTwo {
         userNameInput.sendKeys("problem_user");
         submitButton.submit();
         WebElement errorBox = driver.findElement(By.cssSelector(".error-message-container"));
-        Thread.sleep(3000);
         Assertions.assertEquals("Epic sadface: Password is required", errorBox.getText(),
                 "Password is required");
         driver.quit();

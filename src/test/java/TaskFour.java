@@ -15,7 +15,7 @@ public class TaskFour {
 
     //Napisz test sprawdzający przejście ze strony głównej do strony ”Kontakt”
     @Test
-    void shouldGoFromMainPageToContacts() throws InterruptedException {
+    void shouldGoFromMainPageToContacts(){
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
@@ -26,7 +26,7 @@ public class TaskFour {
         emailInput.sendKeys("standard_user");
         submitButton.click();
         driver.findElement(By.id("react-burger-menu-btn")).click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement aboutButton = driver.findElement(By.id("about_sidebar_link"));
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(7));
         aboutButton.click();
